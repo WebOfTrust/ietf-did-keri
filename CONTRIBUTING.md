@@ -15,3 +15,6 @@ repository constitutes Contributions to the IETF Standards Process
 You agree to comply with all applicable IETF policies and procedures, including,
 BCP 78, 79, the TLP, and the TLP rules regarding code components (e.g. being
 subject to a Simplified BSD License) in Contributions.
+
+In addition to the terms of the the IETF Standards Process described above all contributions to this repository fall under the specifics of
+the licensing terms described in [License Terms](https://github.com/WebOfTrust/ietf-did-keri/blob/main/LICENSE.md) this includes Apache2 licensing of patents.
