@@ -1,0 +1,83 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-04-04T00:40:27.716251+00:00",
+  "repo": "WebOfTrust/ietf-did-keri",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOGzfc7M4yM1OA",
+      "title": "0.0.1",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/pull/1",
+      "state": "MERGED",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Initial version.",
+      "createdAt": "2022-02-07T22:25:09Z",
+      "updatedAt": "2022-02-07T23:43:47Z",
+      "baseRepository": "WebOfTrust/ietf-did-keri",
+      "baseRefName": "main",
+      "baseRefOid": "5c484cc309bb13cbd4b674359099fa8c60056bdb",
+      "headRepository": "pfeairheller/ietf-did-keri",
+      "headRefName": "feat-initial-version",
+      "headRefOid": "618e4bc4da61df44f1b7077a6e597467553c9330",
+      "closedAt": "2022-02-07T23:43:43Z",
+      "mergedAt": "2022-02-07T23:43:43Z",
+      "mergedBy": "pfeairheller",
+      "mergeCommit": {
+        "oid": "06da71d5f5c5142c8ec0498e1e2d3797d127ed69"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
