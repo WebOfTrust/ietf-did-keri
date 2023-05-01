@@ -335,11 +335,6 @@ The protections mentioned in [Replay Attacks]()and [Message Attacks]()render Man
 {::boilerplate bcp14-tagged}
 
 
-# Security Considerations
-
-TODO Security
-
-
 # IANA Considerations
 
 This document has no IANA actions.
