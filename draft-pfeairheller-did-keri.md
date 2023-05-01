@@ -99,48 +99,48 @@ Key State represents the current values for the keys, witnesses and thresholds f
 Key state notification messages differ depending on whether the signer is using a delegated identifier. The follow examples detail the fields needed for each permutation.
 
             {
-              "v": "KERI10JSON00011c\_",
+              "v": "KERI10JSON00011c_",
               "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
               "s": "2",
               "t": "ksn",
               "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
               "te": "rot",
               "kt": "1",
-              "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
+              "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
               "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
               "wt": "1",
-              "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-              "c": \["eo"\],
+              "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+              "c": ["eo"],
               "ee":
                 {
                   "s":  "1",
                   "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-                  "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-                  "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
+                  "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                  "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
                 },
               "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
             }
 
 
             {
-              "v": "KERI10JSON00011c\_",
+              "v": "KERI10JSON00011c_",
               "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
               "s": "2",
               "t": "ksn",
               "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
               "te": "rot",
               "kt": "1",
-              "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
+              "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
               "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
               "wt": "1",
-              "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-              "c": \["eo"\],
+              "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+              "c": ["eo"],
               "ee":
                 {
                   "s":  "1",
                   "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-                  "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-                  "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
+                  "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                  "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
                 },
               "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
             }
@@ -153,18 +153,18 @@ did:keri defines `keyState` DID Document Metadata (see [DID Document Metadata](h
 *   `keyState` is the verified state of the KEL for the identifier represented by this DID Doc (See [Key State]()).
 
         {
-            "didDocument": DID\_DOCUMENT\_OBJECT,
+            "didDocument": DID_DOCUMENT_OBJECT,
             "didDocumentMetadata": {
                 "keyState":  {
-                  "v": "KERI10JSON00011c\_",
+                  "v": "KERI10JSON00011c_",
                   "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
                   "t": "ksn",
                   "kt": "1",
-                  "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
+                  "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
                   "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
                   "wt": "1",
-                  "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-                  "c": \["eo"\],
+                  "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+                  "c": ["eo"],
                   "e":
                     {
                       "s": "2",
@@ -175,8 +175,8 @@ did:keri defines `keyState` DID Document Metadata (see [DID Document Metadata](h
                     {
                       "s": "1",
                       "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-                      "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-                      "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
+                      "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                      "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
                     },
                   "di": "",
                   "a": {}
@@ -209,7 +209,7 @@ The method specific identifier for the did:keri method is the prefix for a conte
 
 A self-addressing, self-certifying identifier is cryptographically bound to the inception keys used to create it. The rationale and process for the derivation of an identifier is described in detail in the [Derivation Codes](https://github.com/decentralized-identity/keri/blob/master/kids/kid0001.md#derivation-codes) section of \[\[KID0001\]\]
 
-         did:keri:EXq5YqaL6L48pf0fu7IUhL0JRaU2\_RxFP0AL43wYn148
+         did:keri:EXq5YqaL6L48pf0fu7IUhL0JRaU2_RxFP0AL43wYn148
 
 
 # Operations
