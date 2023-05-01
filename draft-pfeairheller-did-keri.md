@@ -212,17 +212,36 @@ A self-addressing, self-certifying identifier is cryptographically bound to the 
          did:keri:EXq5YqaL6L48pf0fu7IUhL0JRaU2\_RxFP0AL43wYn148
 
 
-# Operations
+# DID Operations
 
 The following section outlines the DID operations for the did:keri method.
 
-## Create
+## Create DID
 
 Creation of a did:keri DID is accomplished by creating, signing and publishing an Inception event. If witnesses are listed in the inception event, the receipts are also required for DID creation to be complete.
 
 Detailed steps for prefix derivation are in \[\[KID0001\]\] and witness configuration in \[\[KID0009\]\]. Inception events are covered in \[\[KID0003\]\].
 
-## Read
+## Update DID
+
+Updating a did:keri DID is accomplished by publishing establishment events to the KEL for performing operations such as key rotation and updating signature thresholds, witnesses and delegates.
+
+A detailed description of event types, their semantics and uses can be found in \[\[KID0003\]\].
+
+## Deactivate DID
+
+Deactivation of a did:keri DID consists of rotation to 0 controlling keys, which terminates the ability to recover the identifier and indicates that the identifier has been abandoned. Identifiers which are delegated to by an abandoned Identifier are also considered abandoned (delegating Ixn events can no longer be created).
+
+Detailed steps are specified in \[\[KID0003\]\].
+
+## Resolve DID
+
+In order to resolve a DID into a DID Document, the key event log (KEL) must be discovered using one of the
+following three alternatives. The selection of one mechanism over the other will depend on the use case.
+
+* Using Out Of Band Introductions (OOBI): leverage native KERI introductions (OOBI and percolated discovery).
+* Using Watcher Integration: based on the availability of Watchers or Super Watcher at the ecosystem in place.
+* Using a Self-Addressing approach: valid for effective non transferable AIDs (no key rotation); useful as ephemeral DID.
 
 Steps to resolve a \`did:keri:$PREFIX\` DID:
 
@@ -233,18 +252,6 @@ Steps to resolve a \`did:keri:$PREFIX\` DID:
 5.  Add the Key State as DID Document Metadata as defined in[Resolver Metadata]()
 
 Establishment of control authority can be done independently of DID document contents, as long as the Key State is provided in the DID Document Metadata. See [Resolver Metadata]().
-
-## Update
-
-Updating a did:keri DID is accomplished by publishing establishment events to the KEL for performing operations such as key rotation and updating signature thresholds, witnesses and delegates.
-
-A detailed description of event types, their semantics and uses can be found in \[\[KID0003\]\].
-
-## Deactivate
-
-Deactivation of a did:keri DID consists of rotation to 0 controlling keys, which terminates the ability to recover the identifier and indicates that the identifier has been abandoned. Identifiers which are delegated to by an abandoned Identifier are also considered abandoned (delegating Ixn events can no longer be created).
-
-Detailed steps are specified in \[\[KID0003\]\].
 
 # Privacy Considerations
 
