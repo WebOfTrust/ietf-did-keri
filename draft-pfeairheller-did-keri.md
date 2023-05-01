@@ -191,8 +191,6 @@ The following field MAY appear in a did:keri DID document: `verificationMethod`
 
 Non-normative note: multiple namespaces using the same DID method could prove control or replay history for one controlling keypair that has been used across multiple ledgers. KERL logs could be stored in a secondary root of trust (i.e., a ledger), and similar or identical resolver metadata could be returned by querying the same identifier there.
 
-The following field is not a core field in a did:keri DID document: `Services`. The did:keri method is provided for interoperability for the purpose of using KERI to establish control authority of the current public keys associated with KERI identifier behind the keri:did DID. It is anticipated that KERI tunnel methods (eg. did:indy:sov:keri) will provide these features to enable addition interop.
-
 # The did:keri Format
 
 The format for the did:keri method conforms to the \[\[DID-CORE\]\] specification and is simple. It consists of the `did:keri:` prefix, followed by the identifier prefix.
