@@ -89,11 +89,10 @@ Table of Contents
      6.4.  Message Insertion, Deletion, Modification
      6.5.  Man-In-The-Middle Attacks
    7.  Conventions and Definitions
-   8.  Security Considerations
-   9.  IANA Considerations
-   10. References
-     10.1.  Normative References
-     10.2.  Informative References
+   8.  IANA Considerations
+   9.  References
+     9.1.  Normative References
+     9.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -534,17 +533,13 @@ Table of Contents
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-8.  Security Considerations
-
-   TODO Security
-
-9.  IANA Considerations
+8.  IANA Considerations
 
    This document has no IANA actions.
 
-10.  References
+9.  References
 
-10.1.  Normative References
+9.1.  Normative References
 
    [CESR]     Smith, S., "Composable Event Streaming Representation
               (CESR)", 2021,
@@ -559,7 +554,7 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
-10.2.  Informative References
+9.2.  Informative References
 
    [KERI]     Smith, S., "Key Event Receipt Infrastructure (KERI)",
               2021, <https://arxiv.org/abs/1907.02143>.
