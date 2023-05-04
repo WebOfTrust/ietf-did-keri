@@ -4,8 +4,8 @@
 
 TODO Working Group                                        P. Feairheller
 Internet-Draft                                                     GLEIF
-Intended status: Informational                           7 February 2022
-Expires: 11 August 2022
+Intended status: Informational                                4 May 2023
+Expires: 5 November 2023
 
 
                         The did:keri DID Method
@@ -38,11 +38,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 August 2022.
+   This Internet-Draft will expire on 5 November 2023.
 
 Copyright Notice
 
-   Copyright (c) 2022 IETF Trust and the persons identified as the
+   Copyright (c) 2023 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -191,52 +191,52 @@ Table of Contents
    signer is using a delegated identifier.  The follow examples detail
    the fields needed for each permutation.
 
-         {
-           "v": "KERI10JSON00011c\_",
-           "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
-           "s": "2",
-           "t": "ksn",
-           "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-           "te": "rot",
-           "kt": "1",
-           "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
-           "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
-           "wt": "1",
-           "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-           "c": \["eo"\],
-           "ee":
-             {
-               "s":  "1",
-               "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-               "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-               "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
-             },
-           "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
-         }
+           {
+             "v": "KERI10JSON00011c_",
+             "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
+             "s": "2",
+             "t": "ksn",
+             "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+             "te": "rot",
+             "kt": "1",
+             "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
+             "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
+             "wt": "1",
+             "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+             "c": ["eo"],
+             "ee":
+               {
+                 "s":  "1",
+                 "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+                 "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                 "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
+               },
+             "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
+           }
 
 
-         {
-           "v": "KERI10JSON00011c\_",
-           "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
-           "s": "2",
-           "t": "ksn",
-           "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-           "te": "rot",
-           "kt": "1",
-           "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
-           "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
-           "wt": "1",
-           "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-           "c": \["eo"\],
-           "ee":
-             {
-               "s":  "1",
-               "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-               "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-               "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
-             },
-           "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
-         }
+           {
+             "v": "KERI10JSON00011c_",
+             "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
+             "s": "2",
+             "t": "ksn",
+             "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+             "te": "rot",
+             "kt": "1",
+             "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
+             "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
+             "wt": "1",
+             "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+             "c": ["eo"],
+             "ee":
+               {
+                 "s":  "1",
+                 "d":  "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+                 "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                 "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
+               },
+             "di": "EJZAoTNZH3ULvYAfSVPzhzS6b5CMaU6JR2nmwyZ-i0d8"
+           }
 
 2.5.  Resolver Metadata
 
@@ -244,40 +244,40 @@ Table of Contents
    Metadata (https://w3c-ccg.github.io/did-resolution/#output-
    documentmetadata) in [[?DID-RESOLUTION]]).
 
- *  keyState is the verified state of the KEL for the identifier
-    represented by this DID Doc (See Key State).
+   *  keyState is the verified state of the KEL for the identifier
+      represented by this DID Doc (See Key State).
 
- {
-     "didDocument": DID\_DOCUMENT\_OBJECT,
-     "didDocumentMetadata": {
-         "keyState":  {
-           "v": "KERI10JSON00011c\_",
-           "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
-           "t": "ksn",
-           "kt": "1",
-           "k": \["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"\],
-           "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
-           "wt": "1",
-           "w": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\],
-           "c": \["eo"\],
-           "e":
-             {
-               "s": "2",
-               "t": "rot",
-               "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-             },
-           "ee":
-             {
-               "s": "1",
-               "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
-               "wr": \["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"\],
-               "wa": \["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"\]
-             },
-           "di": "",
-           "a": {}
-         }
-     }
- }
+   {
+       "didDocument": DID_DOCUMENT_OBJECT,
+       "didDocumentMetadata": {
+           "keyState":  {
+             "v": "KERI10JSON00011c_",
+             "i": "EaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM",
+             "t": "ksn",
+             "kt": "1",
+             "k": ["DaU6JR2nmwyZ-i0d8JZAoTNZH3ULvYAfSVPzhzS6b5CM"],
+             "n": "EZ-i0d8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CM",
+             "wt": "1",
+             "w": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"],
+             "c": ["eo"],
+             "e":
+               {
+                 "s": "2",
+                 "t": "rot",
+                 "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+               },
+             "ee":
+               {
+                 "s": "1",
+                 "d": "EAoTNZH3ULvaU6JR2nmwyYAfSVPzhzZ-i0d8JZS6b5CM",
+                 "wr": ["Dd8JZAoTNZH3ULvaU6JR2nmwyYAfSVPzhzS6b5CMZ-i0"],
+                 "wa": ["DnmwyYAfSVPzhzS6b5CMZ-i0d8JZAoTNZH3ULvaU6JR2"]
+               },
+             "di": "",
+             "a": {}
+           }
+       }
+   }
 
 2.6.  The DID Document
 
@@ -326,7 +326,7 @@ Table of Contents
    identity/keri/blob/master/kids/kid0001.md#derivation-codes) section
    of [[KID0001]]
 
-        did:keri:EXq5YqaL6L48pf0fu7IUhL0JRaU2\_RxFP0AL43wYn148
+        did:keri:EXq5YqaL6L48pf0fu7IUhL0JRaU2_RxFP0AL43wYn148
 
 4.  Operations
 
@@ -428,7 +428,7 @@ Table of Contents
    can no longer be trusted.  This establishment of non-repudiation
    enables consistent attribution.
 
-   See [[KID0010]] for a detailed description of KERI'S Agreement
+   See [[KID0010]] for a detailed description of KERI’S Agreement
    Algorithm for Control Establishment (KAACE).
 
 5.5.  Correlation
@@ -580,5 +580,4 @@ Author's Address
 
    Phil Feairheller
    GLEIF
-
    Email: Philip.Feairheller@gleif.org
