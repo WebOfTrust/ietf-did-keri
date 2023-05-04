@@ -291,14 +291,6 @@ Table of Contents
    identical resolver metadata could be returned by querying the same
    identifier there.
 
-   The following field is not a core field in a did:keri DID document:
-   Services.  The did:keri method is provided for interoperability for
-   the purpose of using KERI to establish control authority of the
-   current public keys associated with KERI identifier behind the
-   keri:did DID.  It is anticipated that KERI tunnel methods (eg.
-   did:indy:sov:keri) will provide these features to enable addition
-   interop.
-
 3.  The did:keri Format
 
    The format for the did:keri method conforms to the [[DID-CORE]]
