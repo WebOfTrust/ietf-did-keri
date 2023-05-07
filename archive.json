@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-05-02T00:41:26.365202+00:00",
+  "timestamp": "2023-05-07T00:42:59.081999+00:00",
   "repo": "WebOfTrust/ietf-did-keri",
   "labels": [
     {
@@ -127,52 +127,84 @@
       "id": "PR_kwDOGzfc7M5Phagk",
       "title": "Remove duplicate section",
       "url": "https://github.com/WebOfTrust/ietf-did-keri/pull/4",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "rodolfomiranda",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-05-01T19:02:46Z",
-      "updatedAt": "2023-05-01T19:02:46Z",
+      "updatedAt": "2023-05-04T22:19:06Z",
       "baseRepository": "WebOfTrust/ietf-did-keri",
       "baseRefName": "main",
       "baseRefOid": "06da71d5f5c5142c8ec0498e1e2d3797d127ed69",
       "headRepository": "rodolfomiranda/ietf-did-keri",
       "headRefName": "patch-3",
       "headRefOid": "6d3d5636a15d62ff795992af13493745cba0bcf5",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-05-04T22:19:05Z",
+      "mergedAt": "2023-05-04T22:19:05Z",
+      "mergedBy": "pfeairheller",
+      "mergeCommit": {
+        "oid": "b9f485b9cbee9858b9b613d5db976691e42dcc75"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOGzfc7M5UR1pg",
+          "commit": {
+            "abbreviatedOid": "6d3d563"
+          },
+          "author": "pfeairheller",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-05-04T21:41:36Z",
+          "updatedAt": "2023-05-04T21:41:36Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 5,
       "id": "PR_kwDOGzfc7M5PiGbv",
       "title": "Remove \"Service\" disclaimer",
       "url": "https://github.com/WebOfTrust/ietf-did-keri/pull/5",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "rodolfomiranda",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "I think the following text should be omitted in the new version of did:keri:\r\n\r\n>The following field is not a core field in a did:keri DID document: `Services`. The did:keri method is provided for interoperability for the purpose of using KERI to establish control authority of the current public keys associated with KERI identifier behind the keri:did DID. It is anticipated that KERI tunnel methods (eg. did:indy:sov:keri) will provide these features to enable addition interop.",
       "createdAt": "2023-05-01T21:07:30Z",
-      "updatedAt": "2023-05-01T21:07:30Z",
+      "updatedAt": "2023-05-04T22:17:51Z",
       "baseRepository": "WebOfTrust/ietf-did-keri",
       "baseRefName": "main",
       "baseRefOid": "06da71d5f5c5142c8ec0498e1e2d3797d127ed69",
       "headRepository": "rodolfomiranda/ietf-did-keri",
       "headRefName": "patch-4",
       "headRefOid": "9437dd3b5df9bc84354dedbf4ad430fbc5d61c71",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-05-04T22:17:51Z",
+      "mergedAt": "2023-05-04T22:17:51Z",
+      "mergedBy": "pfeairheller",
+      "mergeCommit": {
+        "oid": "e4fdb80d71db0a488250237ded0005c75ae8abaa"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOGzfc7M5UR0wD",
+          "commit": {
+            "abbreviatedOid": "9437dd3"
+          },
+          "author": "pfeairheller",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-05-04T21:37:27Z",
+          "updatedAt": "2023-05-04T21:37:27Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 6,
@@ -205,26 +237,42 @@
       "id": "PR_kwDOGzfc7M5PidGH",
       "title": "Remove escape backlashes in blocks of code",
       "url": "https://github.com/WebOfTrust/ietf-did-keri/pull/7",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "rodolfomiranda",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "backlashes for escaping special chars are not needed in the block of code",
       "createdAt": "2023-05-01T22:30:30Z",
-      "updatedAt": "2023-05-01T22:31:38Z",
+      "updatedAt": "2023-05-04T21:25:41Z",
       "baseRepository": "WebOfTrust/ietf-did-keri",
       "baseRefName": "main",
       "baseRefOid": "06da71d5f5c5142c8ec0498e1e2d3797d127ed69",
       "headRepository": "rodolfomiranda/ietf-did-keri",
       "headRefName": "patch-6",
       "headRefOid": "11463702206267303017c52ff555ff26d600f95e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-05-04T21:25:41Z",
+      "mergedAt": "2023-05-04T21:25:41Z",
+      "mergedBy": "pfeairheller",
+      "mergeCommit": {
+        "oid": "69ab3ae43e5bb4f937415e8dc4aba4f3d8290e5e"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOGzfc7M5URxM2",
+          "commit": {
+            "abbreviatedOid": "1146370"
+          },
+          "author": "pfeairheller",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-05-04T21:23:10Z",
+          "updatedAt": "2023-05-04T21:23:10Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
