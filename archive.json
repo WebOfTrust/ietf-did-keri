@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-05-07T00:42:59.081999+00:00",
+  "timestamp": "2023-06-11T00:52:40.104486+00:00",
   "repo": "WebOfTrust/ietf-did-keri",
   "labels": [
     {
@@ -63,6 +63,171 @@
       "body": "The goal is to define a univocal mapping between the keys in the KEL and the `verificationMethod` property,  and the Verification Relationships `authentication`,  `assertionMethod`, `keyAgreement`, `capabilityInvocation` and `capabilityDelegation` properties of the DID Document. \r\n\r\nFrom @pfeairheller [presentation](https://keriworld.slack.com/archives/C0552BPRN5D/p1682704423143979):\r\n* Verification Methods:\r\n    * KERI public signing keys\r\n    * Other keys committed to by AID\r\n        * Keys derived from public signing keys (encryption)\r\n        * Anchored in KEL (using cryptographic digest)\r\n        * BADA (Best Available Data Acceptance) Policy\r\n* Verification Relationships:\r\n    * Authentication and assertion assigned to KERI public keys\r\n    * Other types represented by key role BADA data\r\n\r\nFrom [ietf-did-keri](https://github.com/WebOfTrust/ietf-did-keri):\r\n\r\n> For each key K in the Key State, add a Verification Method to the DID Doc containing K and the appropriate type, with the ID of K being K's prefix form (alternatively, the ID could be an integer of K's index in the current signer list)\r\n\r\nI think we need to start defining:\r\n* How to identify other keys anchored in the KEL. Should a specific seal format be defined to cover all possible cases defined in the DID Spec?\r\n* key Id generation for each key\r\n* Mapping of BADA roles to relationships",
       "createdAt": "2023-04-30T20:37:29Z",
       "updatedAt": "2023-04-30T20:37:29Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 8,
+      "id": "I_kwDOGzfc7M5oL35_",
+      "title": "Mapping of KERI service endpoints to services",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/8",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Currently we only have a mapping from a KERI service endpoint for an AID in the role of Witness and that is mapped to a service with type 'keri-mailbox'.  That needs to be updated and others added.\r\n\r\nIn addition, we need to add other roles to KERI to support external service types like DIDCommMessaging.  We should also define service types for all endpoint roles in KERI and submit a PR to add them to:\r\n\r\nhttps://www.w3.org/TR/did-spec-registries/#service-types\r\n\r\n",
+      "createdAt": "2023-06-08T13:53:42Z",
+      "updatedAt": "2023-06-09T01:31:30Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "rodolfomiranda",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "for DIDCommv2 the service is defined as following:\r\n```\r\n{\r\n    \"id\": \"did:example:123456789abcdefghi#didcomm-1\",\r\n    \"type\": \"DIDCommMessaging\",\r\n    \"serviceEndpoint\": {\r\n        \"uri\": \"https://example.com/path\",\r\n        \"accept\": [\r\n            \"didcomm/v2\",\r\n            \"didcomm/aip2;env=rfc587\"\r\n        ],\r\n        \"routingKeys\": [\"did:example:somemediator#somekey\"]\r\n    }\r\n}\r\n```\r\nor\r\n```\r\n{\r\n    \"id\": \"did:example:123456789abcdefghi#didcomm-1\",\r\n    \"type\": \"DIDCommMessaging\",\r\n    \"serviceEndpoint\": [{\r\n        \"uri\": \"https://example.com/path\",\r\n        \"accept\": [\r\n            \"didcomm/v2\",\r\n            \"didcomm/aip2;env=rfc587\"\r\n        ],\r\n        \"routingKeys\": [\"did:example:somemediator#somekey\"]\r\n    }]\r\n}\r\n```\r\n",
+          "createdAt": "2023-06-09T01:31:30Z",
+          "updatedAt": "2023-06-09T01:31:30Z"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "I_kwDOGzfc7M5oVEu1",
+      "title": "Consider where to put the AID",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/9",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "The current proposal for a new did:web-ified did:keri is to format the DID the same as did:web with the requirement that the AID be the last component of the path portion of the DID\r\n\r\nSo something like\r\n\r\n`did:keri:<domain name>:<path components>:<aid>`\r\n\r\nIt was proposed that we should instead place the AID first in the did:keri DID as in\r\n\r\n`did:keri:<aid>:<domain name>:<path components>`\r\n\r\nWe need to make a decision on this.\r\n\r\nWorth pointing out in another issue there is a suggestion to rename did:keri to did:webs and in that event it might make sense to keep the formatting of did:web\r\n\r\nCould a domain-free form such as did:keri:EFcrtYzHx11TElxDmEDx355zm7nJhbmdcIluw7UMbUIL still be supported? So for did:keri:id:..., either id is a CESR code (without dots) or it is a dotted domain?\r\n\r\nOr let the did:web lookup be a hint and reverse it: did:keri:{SAID}:domain.tld:\u2026",
+      "createdAt": "2023-06-09T18:51:35Z",
+      "updatedAt": "2023-06-09T18:59:16Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 10,
+      "id": "I_kwDOGzfc7M5oVFeu",
+      "title": "Rename did:keri to did:webs",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/10",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "A useful analogy.  did:keri is to did:web what https is to http.  And there should be about the same level of effort to step up from did:web to did:keri.  Let's people start with the easy way, but people will quickly transform to using the secure way because they remember http/https.\r\n\r\nInstead of **did:keri**, we call it **did:webs** and push that analogy. From a marketing perspective it\u2019s better - not named for KERI, but powered by it. Clean slate in some circles.\r\n\r\n\r\n\r\n",
+      "createdAt": "2023-06-09T18:54:42Z",
+      "updatedAt": "2023-06-09T21:13:55Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "SmithSamuelM",
+          "authorAssociation": "NONE",
+          "body": "So we will support three did methods?\r\n- did:web\r\n- did:webs\r\n- did:keri\r\n\r\n\r\nI think there should always be a did:keri because its recognized now and will gain more recognition over time. But having a more secure version of did:web that is a limited version of did:keri makes some sense also.  Not sure.",
+          "createdAt": "2023-06-09T19:26:09Z",
+          "updatedAt": "2023-06-09T19:26:22Z"
+        },
+        {
+          "author": "pfeairheller",
+          "authorAssociation": "MEMBER",
+          "body": "Yes, that makes more sense to me.  All three methods, we are defining the last 2 here.  did:keri includes the did:webs approach but also the super watcher variant.  did:webs is just the variant with the domain name.",
+          "createdAt": "2023-06-09T19:28:58Z",
+          "updatedAt": "2023-06-09T19:28:58Z"
+        },
+        {
+          "author": "pfeairheller",
+          "authorAssociation": "MEMBER",
+          "body": "So maybe we need a did:webs repo and all this initial work needs to go there.",
+          "createdAt": "2023-06-09T19:29:33Z",
+          "updatedAt": "2023-06-09T19:29:33Z"
+        },
+        {
+          "author": "SmithSamuelM",
+          "authorAssociation": "NONE",
+          "body": "And if we are really successful did:webs will supplant did:web",
+          "createdAt": "2023-06-09T21:13:55Z",
+          "updatedAt": "2023-06-09T21:13:55Z"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "I_kwDOGzfc7M5oVHf2",
+      "title": "Define how to use metadata such as equivalentId to express that two DIDs identify the same subject.",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/11",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "With support for both did:web and did:webs coming from the same AID, we'll need a way to associate the two together.  Defining a consistent approach in the generation of the DID Doc is needed.  \r\n\r\nCurrent suggestion is EquivalentID.",
+      "createdAt": "2023-06-09T19:01:30Z",
+      "updatedAt": "2023-06-09T19:01:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 12,
+      "id": "I_kwDOGzfc7M5oVISE",
+      "title": "Define semantics for anchoring the domain in an anchor/TEL to track control",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/12",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "In the event that a DID controller loses control of the domain name in their DID, we need to define a mechanism for anchoring some form of transfer log into the KEL of the base AID to ensure cryptographic chain of custody to the resolution of the DID at its new location.",
+      "createdAt": "2023-06-09T19:03:25Z",
+      "updatedAt": "2023-06-09T19:03:25Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 13,
+      "id": "I_kwDOGzfc7M5oVLI0",
+      "title": "Restructure specification to match new approach",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/13",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "The current specification is out of date and does not contain the key approach landed on recently.  Specifically, the spec needs to define:\r\n\r\n- [ ] The relationship to did:web\r\n- [ ] Support for exposing DIDs also as did:web DIDs\r\n- [ ] How to structure DIDs\r\n- [ ] Sections for how to generate the DID Doc from KEL, rpy, etc.\r\n- [ ] The contents of the DID Resolution Metadata\r\n- [ ] CRUD method definitions.",
+      "createdAt": "2023-06-09T19:10:58Z",
+      "updatedAt": "2023-06-09T19:10:58Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 14,
+      "id": "I_kwDOGzfc7M5oVL6Y",
+      "title": "Define the exact contents and structure of DID Resolution Metadata",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/14",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "A defining feature of this DID method is the inclusion of end verifiable KERI artifacts for the current key state and service endpoints.  This data will be returned in the DID Resolution Metadata and can be used any any consumer to verify the contents of the DID Document themselves (thus **end** verifiable).\r\n\r\nWe need to describe how the CESR artifacts that accompany all KERI messages (key events, rpys, etc) will be encapsulated in the JSON structured DID Resolution Metadata.  In addition, for each mapping of a KERI feature to a DID Doc feature, the artifacts from that KERI feature must be included in the definition of the resolution metadata.",
+      "createdAt": "2023-06-09T19:14:29Z",
+      "updatedAt": "2023-06-09T19:14:29Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 15,
+      "id": "I_kwDOGzfc7M5oVMn4",
+      "title": "Describe the association to did:web",
+      "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/15",
+      "state": "OPEN",
+      "author": "pfeairheller",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "This section should describe how a particular implementation of a did:keri DID method resolver can (maybe MUST) support resolution of any AID as a did:web DID as well.\r\n\r\nThe API from did:web should be expose in the implementation that returns the exact same DID Doc (and only the DID Doc) as returned during did:keri resolution.  The endpoint needed can be found in the did:web specification.",
+      "createdAt": "2023-06-09T19:17:07Z",
+      "updatedAt": "2023-06-09T19:17:07Z",
       "closedAt": null,
       "comments": []
     }
