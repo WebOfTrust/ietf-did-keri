@@ -54,7 +54,7 @@ KERI provides a means for secure and decentralised key management. This specific
 
 The Key Event Receipt Infrastructure is a system for secure self-certifying Identifiers which aims at minimum sufficiency and maximum security. It defines mechanisms for proving the Root of Trust for self-certifying Identifiers and their associated Key State. This spec defines a transform from Key State to DID Document, such that any valid Key Event Log can be processed into a DID Document.
 
-A close analogy is did:peer, except that where the data model of did:peer is a DID Document and JSON patches on said Document, the basic data model of did:keri is an append-only log of Key Events. KERI-based Identifiers are suitable for both any-wise and n-wise purposes.
+A close analogy is [Peer DID Method 1](https://identity.foundation/peer-did-method-spec/#generation-method) (`numalgo`==`1`), except that where the data model of did:peer is a DID Document and JSON patches on said Document, the basic data model of did:keri is an append-only log of Key Events. KERI-based Identifiers are suitable for both any-wise and n-wise purposes.
 
 # Concepts
 
