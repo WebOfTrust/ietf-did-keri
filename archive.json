@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-06-11T00:52:40.104486+00:00",
+  "timestamp": "2023-06-18T00:52:31.541795+00:00",
   "repo": "WebOfTrust/ietf-did-keri",
   "labels": [
     {
@@ -78,7 +78,7 @@
       "labels": [],
       "body": "Currently we only have a mapping from a KERI service endpoint for an AID in the role of Witness and that is mapped to a service with type 'keri-mailbox'.  That needs to be updated and others added.\r\n\r\nIn addition, we need to add other roles to KERI to support external service types like DIDCommMessaging.  We should also define service types for all endpoint roles in KERI and submit a PR to add them to:\r\n\r\nhttps://www.w3.org/TR/did-spec-registries/#service-types\r\n\r\n",
       "createdAt": "2023-06-08T13:53:42Z",
-      "updatedAt": "2023-06-09T01:31:30Z",
+      "updatedAt": "2023-06-15T14:50:36Z",
       "closedAt": null,
       "comments": [
         {
@@ -87,6 +87,27 @@
           "body": "for DIDCommv2 the service is defined as following:\r\n```\r\n{\r\n    \"id\": \"did:example:123456789abcdefghi#didcomm-1\",\r\n    \"type\": \"DIDCommMessaging\",\r\n    \"serviceEndpoint\": {\r\n        \"uri\": \"https://example.com/path\",\r\n        \"accept\": [\r\n            \"didcomm/v2\",\r\n            \"didcomm/aip2;env=rfc587\"\r\n        ],\r\n        \"routingKeys\": [\"did:example:somemediator#somekey\"]\r\n    }\r\n}\r\n```\r\nor\r\n```\r\n{\r\n    \"id\": \"did:example:123456789abcdefghi#didcomm-1\",\r\n    \"type\": \"DIDCommMessaging\",\r\n    \"serviceEndpoint\": [{\r\n        \"uri\": \"https://example.com/path\",\r\n        \"accept\": [\r\n            \"didcomm/v2\",\r\n            \"didcomm/aip2;env=rfc587\"\r\n        ],\r\n        \"routingKeys\": [\"did:example:somemediator#somekey\"]\r\n    }]\r\n}\r\n```\r\n",
           "createdAt": "2023-06-09T01:31:30Z",
           "updatedAt": "2023-06-09T01:31:30Z"
+        },
+        {
+          "author": "peacekeeper",
+          "authorAssociation": "NONE",
+          "body": "I think KERI supporting arbitrary DID document service types would be a major achievement. There is definitely a sense in certain communities that KERI is \"only\" about keys and that it can't be used like \"real\" DIDs.",
+          "createdAt": "2023-06-15T13:33:57Z",
+          "updatedAt": "2023-06-15T13:33:57Z"
+        },
+        {
+          "author": "rodolfomiranda",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I like the idea of define in the spec a deterministic way to map any DID property into the data field of the key event. We need to consider some kind of operations to add, delete or modify those properties in interaction events",
+          "createdAt": "2023-06-15T13:37:53Z",
+          "updatedAt": "2023-06-15T13:37:53Z"
+        },
+        {
+          "author": "rodolfomiranda",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Based on todays keri-dev call, Sam's suggestion is to use a specific db to store DIDComm specific information that can be query with rply messages in a predefined route supported by the BADA run mechanism. \r\n\r\n",
+          "createdAt": "2023-06-15T14:50:36Z",
+          "updatedAt": "2023-06-15T14:50:36Z"
         }
       ]
     },
@@ -109,7 +130,7 @@
     {
       "number": 10,
       "id": "I_kwDOGzfc7M5oVFeu",
-      "title": "Rename did:keri to did:webs",
+      "title": "KERI related did methods  did:web, did:webs, did:keri",
       "url": "https://github.com/WebOfTrust/ietf-did-keri/issues/10",
       "state": "OPEN",
       "author": "pfeairheller",
@@ -118,7 +139,7 @@
       "labels": [],
       "body": "A useful analogy.  did:keri is to did:web what https is to http.  And there should be about the same level of effort to step up from did:web to did:keri.  Let's people start with the easy way, but people will quickly transform to using the secure way because they remember http/https.\r\n\r\nInstead of **did:keri**, we call it **did:webs** and push that analogy. From a marketing perspective it\u2019s better - not named for KERI, but powered by it. Clean slate in some circles.\r\n\r\n\r\n\r\n",
       "createdAt": "2023-06-09T18:54:42Z",
-      "updatedAt": "2023-06-09T21:13:55Z",
+      "updatedAt": "2023-06-15T17:31:22Z",
       "closedAt": null,
       "comments": [
         {
@@ -148,6 +169,13 @@
           "body": "And if we are really successful did:webs will supplant did:web",
           "createdAt": "2023-06-09T21:13:55Z",
           "updatedAt": "2023-06-09T21:13:55Z"
+        },
+        {
+          "author": "peacekeeper",
+          "authorAssociation": "NONE",
+          "body": "I'd like to see all of following variants be possible, is that consistent with what you're saying above @pfeairheller ?\r\n\r\nVariant 1:\r\n`did:keri:<aid>?oobi=`  -> DID URL gets dereferenced to DID document using \"oobi\" (or similar) parameter\r\n\r\nVariant 2:\r\n`did:keri:<aid>`  -> DID gets resolved to DID document using OOBI(s) or super watcher that are either preconfigured in the resolver or passed to the resolver as options\r\n\r\nVariant 3:\r\n`did:web(s):<domain name>:<path components>:<aid>`  -> Resolved just like did:web with additional KERI verification logic happening \r\n",
+          "createdAt": "2023-06-15T13:25:33Z",
+          "updatedAt": "2023-06-15T13:25:33Z"
         }
       ]
     },
@@ -163,9 +191,24 @@
       "labels": [],
       "body": "With support for both did:web and did:webs coming from the same AID, we'll need a way to associate the two together.  Defining a consistent approach in the generation of the DID Doc is needed.  \r\n\r\nCurrent suggestion is EquivalentID.",
       "createdAt": "2023-06-09T19:01:30Z",
-      "updatedAt": "2023-06-09T19:01:30Z",
+      "updatedAt": "2023-06-15T13:18:46Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "peacekeeper",
+          "authorAssociation": "NONE",
+          "body": "Unfortunately the limitation of [equivalentId](https://www.w3.org/TR/did-core/#dfn-equivalentid) is that the equivalent identifiers must be from the same DID method. The rationale behind this was that the DID method itself guarantees the equivalence. Same for [canonicalId](https://www.w3.org/TR/did-core/#dfn-canonicalid).\r\n\r\nThere is however also a weaker mechanism that we can use: [alsoKnownAs](https://www.w3.org/TR/did-core/#also-known-as). This goes into the DID document itself rather than the DID Document Metadata.",
+          "createdAt": "2023-06-15T13:14:23Z",
+          "updatedAt": "2023-06-15T13:14:23Z"
+        },
+        {
+          "author": "rodolfomiranda",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I think that `alsoKnownAs` applies perfectly in for that case. It can also be used when you have the AID published in multiple domains/namespaces.",
+          "createdAt": "2023-06-15T13:18:46Z",
+          "updatedAt": "2023-06-15T13:18:46Z"
+        }
+      ]
     },
     {
       "number": 12,
@@ -211,9 +254,24 @@
       "labels": [],
       "body": "A defining feature of this DID method is the inclusion of end verifiable KERI artifacts for the current key state and service endpoints.  This data will be returned in the DID Resolution Metadata and can be used any any consumer to verify the contents of the DID Document themselves (thus **end** verifiable).\r\n\r\nWe need to describe how the CESR artifacts that accompany all KERI messages (key events, rpys, etc) will be encapsulated in the JSON structured DID Resolution Metadata.  In addition, for each mapping of a KERI feature to a DID Doc feature, the artifacts from that KERI feature must be included in the definition of the resolution metadata.",
       "createdAt": "2023-06-09T19:14:29Z",
-      "updatedAt": "2023-06-09T19:14:29Z",
+      "updatedAt": "2023-06-15T17:04:22Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "peacekeeper",
+          "authorAssociation": "NONE",
+          "body": "Note that there is **(1)** [DID Document Metadata](https://www.w3.org/TR/did-core/#did-document-metadata) and **(2)** [DID Resolution Metadata](https://www.w3.org/TR/did-core/#did-resolution-metadata).\r\n\r\nThe difference is that **(1)** is metadata about the DID and the DID document, whereas **(2)** is metadata about the resolution process that just happened.\r\n\r\nMy feeling is that with regard to KERI, things like key events and key state should go into **(1)**, and e.g. which OOBIs or which watchers were used during a specific resolution process should go into **(2)**.",
+          "createdAt": "2023-06-15T13:06:08Z",
+          "updatedAt": "2023-06-15T13:36:59Z"
+        },
+        {
+          "author": "SmithSamuelM",
+          "authorAssociation": "NONE",
+          "body": "Suggestion:\r\n\r\nWe add a route/resource endpoint in the cloud agent mailbox API for a given AID that any did resolver can query which will add any stuff the controller wants to add to the did doc. So the minimum required are the service endpoints of the witnesses as we do currently but then if a given controller populates the endpoint then other stuff will get pulled from the database attached to the endpoint and put in the did doc.\r\n\r\n",
+          "createdAt": "2023-06-15T17:04:22Z",
+          "updatedAt": "2023-06-15T17:04:22Z"
+        }
+      ]
     },
     {
       "number": 15,
